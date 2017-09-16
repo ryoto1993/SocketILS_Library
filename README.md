@@ -55,7 +55,7 @@ by using luminosity percent and c.c.t. (correlated color temperature)
 
 In the case you want to dim all lights uniformly,
 for example you need to initialize or reset lighting environment,
-you can use following code.
+you can use the following code.
 ~~~
 double luminosityPercent = 50.0;
 double cct = 5000.0;
@@ -67,7 +67,7 @@ If some problem has been occurred in your apps or server,
 the method returns error message by String.  
 
 In the case you need to dim lights individually,
-follow example bellow.
+follow the example bellow.
 ~~~
 ArrayList<Light> dimLights = new ArrayList<>();
 dimLights.add(lights.get(5));
