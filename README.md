@@ -26,7 +26,7 @@ for (int i=0; i<36; i++) {
     lights.add(l);
 }
 ~~~
-if you want to initialize light's luminosity and color temperature
+If you want to initialize light's luminosity and color temperature
 at this point, use the following code.
 ~~~
 for (int i=0; i<36; i++) {
@@ -38,9 +38,9 @@ for (int i=0; i<36; i++) {
 ~~~
 
 ### 2. Setting SocketClient
-Then, you need to set host name and port number of 
+Then, you need to set the host name and port number of 
 socket client in your apps.  
-To configure socket client, use following code.
+To configure socket client, use the following code.
 ~~~
 InetSocketAddress endpoint = InetSocketAddress("192.168.10.1", 44344)
 SocketClient.setEndpoint(endpoint);
@@ -48,7 +48,7 @@ SocketClient.setEndpoint(endpoint);
 
 ### 3. Dimming
 Now, all preparation is complete!  
-You can dim lighting fixture in two ways.
+You can dim lighting fixtures in two ways.
 - dimAllByLumCct: dim all lighting fixtures uniformly
 by using luminosity percent and c.c.t. (correlated color temperature)
 - dimByLights: dim lighting fixtures by ArrayList of Light object
