@@ -6,7 +6,7 @@ By using this library, you can manage socket control lighting
 system very easily in your own apps.
 
 This library includes,
-- Common __"Light"__ class of JAVA
+- Common __"Light"__ class of Lighting System
 - Get lights information from server via JSON and reflect in Light class
 - Send uniform dim command by luminosity percent and c.c.t.
 (correlated color temperature)
