@@ -1,4 +1,4 @@
-package libs;
+package LightingSystem;
 
 
 public class Light {
@@ -23,19 +23,19 @@ public class Light {
         signalB = signals[1];
     }
 
-    void setLumPct(double pct) {this.lumPct = pct;}
+    public void setLumPct(double pct) {this.lumPct = pct;}
 
-    void setTemperature(double tmp) {this.temperature = tmp;}
+    public void setTemperature(double tmp) {this.temperature = tmp;}
 
     public void setPosX(double x) {posX = x;}
 
     public void setPosY(double y) {posY = y;}
 
-    int getId() { return id; }
+    public int getId() { return id; }
 
-    void setId(int id) {this.id = id;}
+    public void setId(int id) {this.id = id;}
 
-    double getLumPct() {
+    public double getLumPct() {
         return lumPct;
     }
 
@@ -43,11 +43,11 @@ public class Light {
 
     public double getPosY() { return posY;}
 
-    double getTemperature() {
+    public double getTemperature() {
         return temperature;
     }
 
-    int[] getSignals() {
+    public int[] getSignals() {
         return new int[]{signalA, signalB};
     }
 }

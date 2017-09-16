@@ -1,4 +1,4 @@
-package libs;
+package LightingSystem;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -9,8 +9,8 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.net.InetSocketAddress;
 import java.net.Socket;
-import java.net.SocketException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class SocketClient {
     static private InetSocketAddress endpoint;
@@ -53,7 +53,7 @@ public class SocketClient {
 
             // map to ArrayList from json
             ObjectMapper mapper = new ObjectMapper();
-            lights = mapper.readValue(json, new TypeReference<ArrayList<Light>>() {
+            lights = mapper.readValue(json, new TypeReference<ArrayList<LightingSystem.Light>>() {
             });
 
         } catch (Exception e) {
@@ -63,7 +63,37 @@ public class SocketClient {
         return lights;
     }
 
-    public static void dimAllByLumCct(double luminosity, double cct) {
+    public static String dimAllByLumCct(double luminosity, double cct) {
+            // check
+            if (luminosity < 0 || luminosity > 100) {
+                return "Invalid luminosity";
+            }
+            if (cct < 0) {
+                return "Invalid cct";
+            }
+
+            // generate command
+            String cmd = "DOWNLIGHT_ALL\n";
+            cmd += luminosity + "," + cct;
+
+            return sendCommand(cmd);
+    }
+
+    public static String dimByLights(List<Light> lights) {
+        // generate command
+        String cmd = "DOWNLIGHT_INDIVIDUAL\n";
+
+        for (Light light: lights) {
+            cmd += String.valueOf(light.getId()) + "," +
+                    String.valueOf(light.getLumPct()) + "," +
+                    String.valueOf(light.getTemperature()) + ",";
+        }
+
+        return sendCommand(cmd);
+
+    }
+
+    public static String sendCommand(String cmd) {
         try {
             // generate socket
             Socket socket = new Socket();
@@ -76,29 +106,17 @@ public class SocketClient {
             InputStreamReader in = new InputStreamReader(socket.getInputStream());
             BufferedReader br = new BufferedReader(in);
 
-            // check
-            if (luminosity < 0 || luminosity > 100) {
-                throw new Exception("Invalid luminosity.");
-            }
-            if (cct < 0) {
-                throw new Exception("Invalid cct.");
-            }
-
-            // generate command
-            String cmd = "DOWNLIGHT_ALL\n";
-            cmd += luminosity + "," + cct;
-
             // send command
             bw.write(cmd);
             bw.newLine();
             bw.flush();
 
             // catch
-            String ok = br.readLine();
-            System.out.println(ok);
+            return br.readLine();
         } catch (Exception e) {
             e.printStackTrace();
         }
+        return "Error";
     }
 
 }
