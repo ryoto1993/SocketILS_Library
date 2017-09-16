@@ -4,7 +4,7 @@ Author: Ryoto Tomioka @ISDL 20th
 ## Download
 [Lighting control system library 1.0.0 (Java)](https://github.com/ryoto1993/SocketILS_Library/raw/master/download/SocketLightingSystemLibrary.jar)
 
-## 1. Agenda
+## 1. Overview
 By using this library, you can manage socket control lighting
 system very easily in your own apps.
 
