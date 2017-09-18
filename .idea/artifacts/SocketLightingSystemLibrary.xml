@@ -3,6 +3,8 @@
     <output-path>$PROJECT_DIR$/out/artifacts/SocketLightingSystemLibrary</output-path>
     <root id="archive" name="SocketLightingSystemLibrary.jar">
       <element id="module-output" name="SocketILS Library" />
+      <element id="library" level="project" name="jackson-core-2.9.0" />
+      <element id="library" level="project" name="jackson-databind-2.9.0" />
       <element id="library" level="project" name="jackson-annotations-2.9.0" />
     </root>
   </artifact>

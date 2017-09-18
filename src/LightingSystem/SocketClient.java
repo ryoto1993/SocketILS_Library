@@ -12,7 +12,8 @@ import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SocketClient {
+public class
+SocketClient {
     static private InetSocketAddress endpoint;
 
     SocketClient(InetSocketAddress end) {
