@@ -45,7 +45,7 @@ Then, you need to set the host name and port number of
 socket client in your apps.  
 To configure socket client, use the following code.
 ~~~
-InetSocketAddress endpoint = InetSocketAddress("192.168.10.1", 44344)
+InetSocketAddress endpoint = new InetSocketAddress("192.168.10.1", 44344)
 SocketClient.setEndpoint(endpoint);
 ~~~
 
