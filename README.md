@@ -4,25 +4,44 @@ Author: Ryoto Tomioka @ISDL 20th
 ## Download
 [Lighting Client library 1.2.0 (Java)](https://github.com/ryoto1993/SocketILS_Library/raw/master/download/LightingClient_1.2.0.jar)
 
+
 ## 1. Overview
 By using this library, you can manage socket control lighting
 system very easily in your own apps.
 
 This library includes,
 - Common __"Light"__ class of __LightingClient__ module.
-- Get lights information from server via JSON and reflect in Light class
+- Get lights information from server via JSON and reflect in __Light__ class
 - Send uniform dim command by luminosity percent and c.c.t.
 (correlated color temperature)
-- Send individual dim command by Light List
-(you can use List\<Light> or ArrayList\<Light>)
+- Send individual dim command by Listed Light object
+(you can use `List<Light>` or `ArrayList<Light>`)
+
 
 ## 2. Usage
-### 1. Creating List of Light object
-First of all, you should make ArrayList of __Light__ object.
+### 1. Setting SocketClient
+First of all, you need to set the host name and port number of 
+socket client in your apps.  
+To configure socket client, use the following code.
+~~~
+InetSocketAddress endpoint = new InetSocketAddress("192.168.10.1", 44344)
+SocketClient.setEndpoint(endpoint);
+~~~
+
+### 2. Creating List of Light object
+Then, you should make ArrayList of __Light__ object.
 ~~~
 static ArrayList<Light> lights = new ArrayList<>();
 ~~~ 
-and, append required number of Light instance into ArrayList.
+You can fetch lighting information including ID,
+Luminance percent, color temperature and light position
+by using `getLights()`.
+~~~
+lights = SocketClient.getLights();
+~~~
+
+If you want generate Light object manually, without using server information,
+append required number of Light instance into ArrayList as in the following code.
 ~~~
 for (int i=0; i<36; i++) {
     Light l = new Light();
@@ -40,21 +59,12 @@ for (int i=0; i<36; i++) {
 }
 ~~~
 
-### 2. Setting SocketClient
-Then, you need to set the host name and port number of 
-socket client in your apps.  
-To configure socket client, use the following code.
-~~~
-InetSocketAddress endpoint = new InetSocketAddress("192.168.10.1", 44344)
-SocketClient.setEndpoint(endpoint);
-~~~
-
 ### 3. Dimming
 Now, all preparation is complete!  
 You can dim lighting fixtures in two ways.
-- dimAllByLumCct: dim all lighting fixtures uniformly
+- `dimAllByLumCct(double Luminocity, double Cct)`: dim all lighting fixtures uniformly
 by using luminosity percent and c.c.t. (correlated color temperature)
-- dimByLights: dim lighting fixtures by ArrayList of Light object
+- `dimByLights(ArrayList<Light> lights)`: dim lighting fixtures by ArrayList of Light object
 
 In the case you want to dim all lights uniformly,
 for example you need to initialize or reset lighting environment,
