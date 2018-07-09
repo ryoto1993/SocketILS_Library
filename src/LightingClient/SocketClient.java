@@ -1,4 +1,4 @@
-package LightingSystem;
+package LightingClient;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -54,7 +54,7 @@ SocketClient {
 
             // map to ArrayList from json
             ObjectMapper mapper = new ObjectMapper();
-            lights = mapper.readValue(json, new TypeReference<ArrayList<LightingSystem.Light>>() {
+            lights = mapper.readValue(json, new TypeReference<ArrayList<LightingClient.Light>>() {
             });
 
         } catch (Exception e) {

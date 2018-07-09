@@ -1,4 +1,4 @@
-package LightingSystem;
+package LightingClient;
 
 
 public class Light {

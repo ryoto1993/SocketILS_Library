@@ -1,15 +1,15 @@
-# Socket Lighting Control System Library
+# Socket Lighting Control System Client Library
 Author: Ryoto Tomioka @ISDL 20th
 
 ## Download
-[Lighting control system library 1.1.0 (Java)](https://github.com/ryoto1993/SocketILS_Library/raw/master/download/SocketLightingSystemLibrary_1.1.0.jar)
+[Lighting Client library 1.1.0 (Java)](https://github.com/ryoto1993/SocketILS_Library/raw/master/download/LightingClient_1.2.0.jar)
 
 ## 1. Overview
 By using this library, you can manage socket control lighting
 system very easily in your own apps.
 
 This library includes,
-- Common __"Light"__ class of Lighting System
+- Common __"Light"__ class of __LightingClient__ module.
 - Get lights information from server via JSON and reflect in Light class
 - Send uniform dim command by luminosity percent and c.c.t.
 (correlated color temperature)
@@ -81,5 +81,3 @@ dimLights.forEach(light -> light.setTemperature(3000));
 System.out.println(SocketClient.dimByLights(dimLights));
 ~~~
 In this codes, only two lighting fixtures are dimmed.
-
-

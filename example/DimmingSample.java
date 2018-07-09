@@ -1,5 +1,5 @@
-import LightingSystem.Light;
-import LightingSystem.SocketClient;
+import LightingClient.Light;
+import LightingClient.SocketClient;
 
 import java.net.InetSocketAddress;
 import java.util.ArrayList;

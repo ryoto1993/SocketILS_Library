@@ -1,10 +1,10 @@
 <component name="ArtifactManager">
-  <artifact type="jar" name="SocketLightingSystemLibrary">
-    <output-path>$PROJECT_DIR$/out/artifacts/SocketLightingSystemLibrary</output-path>
+  <artifact type="jar" build-on-make="true" name="LightingClient">
+    <output-path>$PROJECT_DIR$/out/artifacts/LightingClient</output-path>
     <properties id="ant-preprocessing">
       <options enabled="true" />
     </properties>
-    <root id="archive" name="SocketLightingSystemLibrary.jar">
+    <root id="archive" name="LightingClient.jar">
       <element id="library" level="project" name="jackson" />
       <element id="module-output" name="SocketLightingControlSystem-Library" />
     </root>
