@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/SocketILS Library.iml" filepath="$PROJECT_DIR$/SocketILS Library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SocketLightingControlSystem-Library.iml" filepath="$PROJECT_DIR$/SocketLightingControlSystem-Library.iml" />
     </modules>
   </component>
 </project>
