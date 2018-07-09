@@ -2,7 +2,7 @@
 Author: Ryoto Tomioka @ISDL 20th
 
 ## Download
-[Lighting Client library 1.1.0 (Java)](https://github.com/ryoto1993/SocketILS_Library/raw/master/download/LightingClient_1.2.0.jar)
+[Lighting Client library 1.2.0 (Java)](https://github.com/ryoto1993/SocketILS_Library/raw/master/download/LightingClient_1.2.0.jar)
 
 ## 1. Overview
 By using this library, you can manage socket control lighting
