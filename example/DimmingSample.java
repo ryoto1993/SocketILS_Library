@@ -4,7 +4,7 @@ import LightingSystem.SocketClient;
 import java.net.InetSocketAddress;
 import java.util.ArrayList;
 
-public class SocketTest {
+public class DimmingSample {
     static ArrayList<Light> lights = new ArrayList<>();
 
     public static void main(String[] args) {
@@ -19,9 +19,12 @@ public class SocketTest {
         dimLights.add(lights.get(5));
         dimLights.add(lights.get(11));
 
-        dimLights.forEach(light -> light.setTemperature(3000));
+        dimLights.forEach(light -> {
+            light.setTemperature(6000);
+            light.setLumPct(100);
+        });
 
-        SocketClient.setEndpoint(new InetSocketAddress("localhost", 44344));
+        SocketClient.setEndpoint(new InetSocketAddress("172.20.11.58", 44344));
         System.out.println(SocketClient.dimByLights(dimLights));
     }
 }
