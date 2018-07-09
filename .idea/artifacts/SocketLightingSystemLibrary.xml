@@ -6,7 +6,7 @@
     </properties>
     <root id="archive" name="SocketLightingSystemLibrary.jar">
       <element id="library" level="project" name="jackson" />
-      <element id="dir-copy" path="$PROJECT_DIR$/src" />
+      <element id="module-output" name="SocketLightingControlSystem-Library" />
     </root>
   </artifact>
 </component>
